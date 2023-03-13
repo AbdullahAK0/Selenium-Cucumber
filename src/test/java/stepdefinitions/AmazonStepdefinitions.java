@@ -5,7 +5,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import pages.AmazonPage;
@@ -87,7 +86,10 @@ public class AmazonStepdefinitions {
         String expectedUrl= ConfigReader.getProperty(istenenUrl) + "/";
         Assert.assertEquals(expectedUrl,actualUrl);
     }
-
+    @When("{int}.urune gider")
+    public void urune_gider(Integer istenenIndex) {
+        amazonPage.istenenUrunElementi(istenenIndex).click();
+    }
     @Then("urun isminin {string} icerdigini test eder")
     public void urun_isminin_icerdigini_test_eder(String arananKelime) {
 
@@ -96,9 +98,4 @@ public class AmazonStepdefinitions {
 
     }
 
-
-    @And("{int}. urune gider")
-    public void urune_gider(Integer istenenIndex) {
-        amazonPage.istenenUrunElementi(istenenIndex).click();
-    }
 }
