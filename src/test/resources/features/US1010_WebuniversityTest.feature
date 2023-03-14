@@ -1,5 +1,5 @@
 Feature: US1010 Webuniversity Testi
-@wip
+
   Scenario: TC14 Webuniversity sayfasinda istenen gorevleri yapar.
 
     Given kullanici "webUrl" anasayfaya gider
